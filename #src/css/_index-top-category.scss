@@ -1,0 +1,86 @@
+.top-category {
+    margin-bottom: 70px;
+    // .top-catgory__container
+    &__container {
+    }
+    // .top-catgory__heading
+    &__heading {
+        margin-bottom: 26px;
+    }
+    // .top-catgory__wrapper
+    &__wrapper {
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        // grid-template-rows: 511px 405px;
+        align-items: stretch;
+        gap: 32px;
+    }
+}
+.container {
+}
+.heading {
+}
+.top-category {
+    // .top-category__item
+    &__item {
+    }
+}
+.item-category {
+    grid-column: span 4;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 25px 30px 27px;
+    min-height: 405px;
+    background-color: $grey_light;
+    background-repeat: no-repeat;
+    background-position: left 60%;
+    border-radius: 10px;
+    // .item-category_middle
+    &_middle {
+        grid-column: span 6;
+        min-height: 511px;
+    }
+    // &_sofa {
+    //     background-image: url("../img/top-category/sofa_bgnd.png");
+    // }
+    // &_armchair {
+    //     background-image: url("../img/top-category/armchair.png");
+    // }
+    // &_bed {
+    //     background-image: url("../img/top-category/bed.png");
+    // }
+    // &_dresser {
+    //     background-image: url("../img/top-category/dresser.png");
+    // }
+    // &_chair {
+    //     background-image: url("../img/top-category/chair.png");
+    // }
+
+    // .item-category__menu
+    &__menu {
+        margin-bottom: 8px;
+        & .submenu__item:not(:last-child) {
+            margin-right: 34px;
+        }
+    }
+    // .item-category__link
+    
+     // .item-category__heading
+    &__heading {
+        margin-bottom: auto;
+        padding-bottom: 20px;
+        font-size: 24px;
+        line-height: 33px;
+        color: $black;
+    }
+}
+.menu-category {
+    // .menu-category__item
+    &__item {
+    }
+    // .menu-category__link
+    &__link {
+    }
+   
+}

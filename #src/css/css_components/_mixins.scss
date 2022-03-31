@@ -1,0 +1,88 @@
+@mixin font($font-name, $file-name, $weight, $style) {
+    @font-face {
+        font-family: $font-name;
+        font-display: swap;
+        src: local("#{$file-name}"), url("../fonts/#{$file-name}.woff") format("woff"),
+            url("../fonts/#{$file-name}.woff2") format("woff2");
+        font-weight: #{$weight};
+        font-style: #{$style};
+    }
+}
+
+@mixin btn_reset() {
+    display: inline-block;
+    padding: 0;
+    margin: 0;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    background-color: transparent;
+}
+
+@mixin flex-v-center {
+    display: flex;
+    align-items: center;
+}
+@mixin flex-all-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+// Кастомные миксины под проект
+@mixin icon-hover {
+    transition-property: background-color, color;
+    transition-timing-function: ease-in-out;
+    transition-duration: 0.3s;
+    &:hover {
+        color: $primary_light;
+    }
+    &:focus {
+        background-color: $primary_light;
+        color: $white;
+    }
+    &:active {
+        background-color: transparent;
+        color: $primary_shade;
+    }
+}
+
+// Кастомная стрелка под select choice.js
+@mixin choice-arrow {
+    &::after {
+        height: 8px;
+        width: 13px;
+        border: none;
+        right: 30.5px;
+        // margin-top: 0;
+        transform: translateY(1px);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-image: url("data:image/svg+xml,%3Csvg width='13' height='8' viewBox='0 0 13 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M6.65674 5.80521L11.5593 0.902607L12.3136 1.65685L6.65674 7.31371L0.999884 1.65685L1.75413 0.902607L6.65674 5.80521Z' fill='%23A65CF0'/%3E%3C/svg%3E%0A");
+        transition: transform ease-in-out 0.3s;
+    }
+    &.is-open::after{
+        top: 60%;
+        transform: rotate(180deg);
+    }
+}
+
+// Стандартные hover
+@mixin hover {
+    transition-property: color, background-color;
+    transition-timing-function: ease-in-out;
+    transition-duration: 0.3s;
+    &:focus {
+        color: $primary_shade;
+        background-color: $primary_light;
+    }
+    &:hover {
+        color: $primary;
+        background-color: transparent;
+    }
+    &:active {
+        color: $primary_shade;
+        background-color: transparent;
+    }
+}

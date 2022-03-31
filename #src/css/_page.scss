@@ -1,0 +1,13 @@
+.page {
+    position: relative;
+    // .page__container
+    &__container {
+        position: relative;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 32px;
+        padding-top: 32px;
+    }
+}
+
+

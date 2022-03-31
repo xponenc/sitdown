@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>SitDownPls Мебельный магазин</title>
+</head>
+
+<body>
+    <div class="site-container">
+        @@include('_header.html')
+        <main class="page">
+            <h1 class="visually-hidden">SitDownPls Мебельный магазин</h1>
+            <div class="breadcrumbs container">
+                <ul class="breadcrumbs__list">
+                    <li class="breadcrumbs__item"><a href="index.html" class="breadcrumbs__link">Главная</a></li>
+                    <li class="breadcrumbs__item"><a href="catalog.html" class="breadcrumbs__link">Каталог</a></li>
+                    <li class="breadcrumbs__item"><a href="#" class="breadcrumbs__link">Диваны</a></li>
+                    <li class="breadcrumbs__item"><a class="breadcrumbs__link breadcrumbs__link_current">Прямые диваны</a></li>
+                </ul>
+            </div>
+            <div class="page__container container">
+                @@include('_side-nav.html')
+                @@include('_catalog-catalog.html')
+            </div>
+        </main>
+        @@include('_footer.html')
+    </div>
+    <!-- <script src="libs/jquery-3.6.0.min.js"></script> -->
+    <script src="js/script.js"></script>
+    <!-- <script defer src="libs/yandex_map.js"></script> -->
+    <!-- <script defer src="libs/focus-visible.js"></script> -->
+    <!-- <script defer src="libs/just-validate.min.js"></script> -->
+</body>
+
+</html>

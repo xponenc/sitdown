@@ -1,0 +1,652 @@
+@import "css_components/_var.scss";
+@import "css_components/_mixins.scss";
+
+.container {
+  max-width: calc($container-max-width + 30px);
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+
+.section-offset {
+  padding: 30px 0 49px;
+  @media (min-width:1920px) {
+    padding-top: 36px;
+  }
+  @media (min-width:1024px) {
+    padding: 34px 0 34px;
+  }
+  @media (min-width:510px) {
+    padding: 34px 0 34px;
+  }
+}
+
+
+.btn {
+  @include btn_reset;
+
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 100%;
+  text-align: center;
+  border: 2px solid transparent;
+  border-radius: 10px;
+  padding: 20px 48px;
+  &_primary {
+    color: $white;
+    background-color: $primary;
+    transition-property: border-color, background-color;
+    transition-timing-function: ease-in-out;
+    transition-duration: 0.3s;
+    &:focus:focus-visible {
+      background-color: $primary_light;
+      border-color: $primary_shade;
+    }
+    &:hover{
+      background-color: $primary_light;
+      border-color: $primary_light;
+    }
+    &:active{
+      background-color: $primary_shade;
+      border-color: $primary_shade;
+    }
+  }
+  &_light {
+    // padding: 17px 34px;
+    color: $primary;
+    border-color: $primary;
+    background-color: $white;
+    transition-property: border-color, background-color, color;
+    transition-timing-function: ease-in-out;
+    transition-duration: 0.3s;
+    &:focus:focus-visible {
+      background-color: $primary_light;
+      border-color: $primary_shade;
+    }
+    &:hover{
+      background-color: $primary;
+      color: $white;
+    }
+    &:active{
+      background-color: $primary_shade;
+      border-color: $primary_shade;
+    }
+  }
+}
+
+// Круглая кнопка со стрелкой
+
+.btn-round {
+  @include flex-all-center;
+  
+  width: 32px;
+  height: 32px;
+  border: 2px solid $primary;
+  border-radius: 50%;
+  background-color: transparent;
+  color: $primary;
+  transition-property: background-color, color, border-color;
+  transition-timing-function: ease-in-out;
+  transition-duration: 0.3s;
+  & svg {
+      // color: $primary;
+      height: 12px;
+      width: 7px;
+  }
+  &:hover {
+      background-color: $primary;
+      color: $white;
+      & svg {
+      }
+      &~input {
+          background-color: $md_grey;
+      }
+  }
+  &:focus.focus-visible {
+      background-color: $primary-light;
+      border-color: $primary;
+      color: $white;
+      &~input {
+          border-color: $primary;
+          background-color: $pink_light;
+      }
+  }
+  &:active {
+      background-color: $primary_shade;
+      border-color: $primary_shade;
+      color: $white;
+      &~input {
+          border-color: $grey_light;
+          background-color: $grey_light;
+      }
+      &~.search__icon{
+          color: $primary;
+      }
+  }
+}
+
+
+// Свайпер
+.swiper-pagination-bullets {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.swiper-pagination-bullet {
+  flex: 0 0 27px;
+  height: 27px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 2px 0;
+  background-color: transparent;
+  opacity: 1;
+}
+
+.swiper-pagination-bullet:not(:last-child) {
+  margin-right: 12px;
+}
+
+.controls-slider-special {
+  // .controls-slider-special__arrows
+  &__arrows {
+  }
+}
+.slider-arrows {
+  // .slider-arrows__btn
+  &__btn {
+    // .slider-arrows__btn_prev
+    &_prev {
+      transform: rotate(180deg);
+    }
+    // .slider-arrows__btn_next
+    &_next {
+    }
+  }
+}
+
+.swiper-button-disabled {
+  color: $grey;
+  border-color: $grey;
+  pointer-events: none;
+}
+.swiper-button-disabled:hover {
+  background-color: transparent;
+  color: $grey;
+}
+
+// Общие стили
+
+.heading {
+  font-size: 32px;
+  line-height: 100%;
+}
+
+// Соцсети
+.social {
+  display: grid;
+  grid-template-columns: repeat(3, 30px);
+  gap: 20px;
+  // .social__item
+  &__item {
+    width: 30px;
+    height: 30px;
+    // &:not(:last-child) {
+    //   margin-right: 20px;
+    // }
+  }
+  // .social__link
+  &__link {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    color: $grey;
+    transition: color ease-in-out 0.3s;
+    &:focus {
+      color: $white;
+    }
+    &:hover {
+      color: $primary;
+    }
+    &:active {
+      color: $primary_shade;
+    }
+  }
+  // .social__icon
+  &__icon {
+    width: 100%;
+    height: 100%;
+    color: inherit;
+    fill: currentColor;
+  }
+}
+
+// Карточка товара
+.product-card {
+  display: grid;
+  grid-template-rows: 161px 1fr;
+  gap: 16px;
+  justify-items: stretch;
+  position: relative;
+  padding: 30px 10px;
+  width: 100%;
+  height: 100%;
+  background: $grey_light;
+  border-radius: 10px;
+  &_special {
+    grid-template-rows: 253px 1fr;
+  }
+  &_hidden {
+    display: none;
+    visibility: hidden;
+    opacity: 0;
+    transform: scaleY(0);
+  }
+  &__rating {
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    padding-left: 22px;
+    font-size: 16px;
+    line-height: 130%;
+    color: $secondary;
+    background-size: 16px 16px;
+    background-position: center left;
+    background-repeat: no-repeat;
+    background-image: url("../img/star.svg");
+  }
+  &__image {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    & img {
+      object-fit: none;
+      object-position: bottom;
+    }
+  }
+  &__info {
+    display: flex;
+    flex-direction: column;
+    // align-items: stretch;
+    justify-content: flex-end;
+    padding: 0 20px;
+    // padding-top: 18px;
+  }
+  &__title {
+    @include hover;
+
+    margin-bottom: 21px;
+    max-width: 227px;
+    font-size: 24px;
+    line-height: 130%;
+    color: $black;
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      border-radius: 10px;
+    }
+    &_special {
+      max-width: 225px;
+    }
+  }
+  // &__footer {
+  //   display: flex;
+  //   justify-self: stretch;
+  // }
+  &__prices {
+    justify-self: flex-start;
+    display: flex;
+    margin-bottom: auto;
+    // padding-top: 2px;
+    padding-bottom: 24px;
+    max-width: 225px;
+    &_special {
+      padding-bottom: 8px;
+    }
+  }
+  &__price {
+    font-size: 16px;
+    line-height: 130%;
+    &:not(:last-child) {
+      margin-right: 33px;
+    }
+    &_old {
+      padding-top: 2px;
+      font-size: 16px;
+      text-decoration-line: line-through;
+      color: $grey;
+    }
+    &_special{
+      font-size: 18px;
+      line-height: 130%;
+      color: $secondary;
+    }
+
+    &_accent {
+      font-size: 18px;
+      line-height: 130%;
+      color: $secondary;
+    }
+  }
+  &__scheme {
+    position: absolute;
+    bottom: 30px;
+    right: 30px;
+    max-width: calc(50% - 30px);
+    & img {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: none;
+      object-position: bottom right;
+    }
+  }
+  &__btn {
+    position: relative;
+    z-index: 5;
+    align-self: start;
+    padding: 17px 32px;
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;bottom: 0;left: 0;right: 0;
+    }
+  }
+}
+
+.discount {
+  position: absolute;
+  left: 0px;
+  top: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 15px;
+  min-height: 34px;
+  min-width: 82px;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 19px;
+  // text-align: center;
+  color: $white;
+  background-color: $secondary;
+  &:after {
+      content: "";
+      position: absolute;
+      height: 0;
+      width: 0;
+      right: -11.55%;
+      border-top: 17px solid transparent;
+      border-bottom: 17.5px solid transparent;
+      border-left: 10px solid $secondary;
+  }
+}
+
+.link-catalog {
+  display: flex;
+  align-items: center;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 120%;
+  color: $primary;
+  & span {
+      display: inline-block;
+      margin-right: 6px;
+      color: $primary;
+      border-bottom: 2px solid transparent;
+      transition-property: color, border-color;
+      transition-timing-function: ease-in-out;
+      transition-duration: 0.3s;
+  }
+  & svg {
+      padding: 4px;
+      width: 22px;
+      height: 22px;
+      color: $primary;
+      border: 2px solid $primary;
+      border-radius: 50%;
+      transition-property: background-color, color, border-color;
+      transition-timing-function: ease-in-out;
+      transition-duration: 0.3s;
+  }
+  &:hover {
+      & span {
+      border-color: $primary;
+      }
+      & svg {
+          background-color: $primary;
+          color: $white;
+      } 
+  }
+  &:focus:focus-visible {
+      & span {
+          border-color: $primary;
+      }
+      & svg {
+          background-color: $primary-light;
+          color: $white;
+      }
+  }
+  &:active {
+      & span {
+          color: $primary_shade;
+          border-color: $primary_shade;
+      }
+      & svg {
+          border-color: $primary_shade;
+          background-color: $primary_shade;
+          color: $white;
+      } 
+  }
+
+}
+.just-validate-tooltip-container {
+  position: relative;
+}
+.just-validate-error-label {
+  position: absolute;
+  top: -21px;
+  left: 0;
+  right: 0;
+  height: 16px;
+  padding: 0 18px;
+  font-size: 12px;
+  line-height: 16px;
+  color: $red_input !important;
+}
+
+.contact-form__checkbox .just-validate-error-label {
+  top: calc(100% + 5px);
+}
+
+.is-invalid {
+  border-color: $red_input;
+}
+
+.is-valid {
+  border-color: $green_input !important;
+}
+
+
+// Тултип
+
+.tooltip {
+  display: inline-block;
+  position: relative;
+  &__icon{
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    color: $secondary;
+    transition: color ease-in-out 0.3s;
+    &::before {
+      content: "112";
+      position: absolute;
+      z-index: 1;
+      top: 0;
+      left: 0;
+      width: 14px;
+      height: 14px;
+      border: 2px solid $secondary;
+    }
+    &:focus {
+      color: $white;
+      background-color: $secondary;
+    }
+    &:hover {
+      color: $white;
+      background-color: $secondary;
+      border-color: $secondary;
+    }
+    &:active {
+      color: $white;
+      background-color: $secondary;
+    }
+    &:hover+.tooltip__text{
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+  &__text {
+    $tooltip-width: 157px;
+    $tooltip-arrow-width: 16px;
+    $tooltip-margin-bottom: 5px;
+
+    position: absolute;
+    left: calc(-1 * $tooltip-width / 2 + ($tooltip-arrow-width / 2));
+    bottom: calc(100% + ($tooltip-arrow-width / 2) + $tooltip-margin-bottom);
+    width: $tooltip-width;
+    padding: $tooltip-margin-bottom;
+    // transform: translateX(-50%);
+    font-size: 9px;
+    line-height: 14px;
+    color: $white;
+    background-color: $black;
+    opacity: 0;
+    visibility: hidden;
+    transition-property: opacity, visibility;
+    transition-timing-function: ease-in-out;
+    transition-duration: 0.3s;
+    &::after{
+      content: "";
+      position: absolute;
+      left: calc(50% - ($tooltip-arrow-width / 2)) ;
+      bottom: calc(-1 * ($tooltip-arrow-width / 2));
+      border-top: calc($tooltip-arrow-width / 2) solid $black;
+      border-right: calc($tooltip-arrow-width / 2) solid transparent;
+      border-left: calc($tooltip-arrow-width / 2) solid transparent;
+    }
+  }
+}
+
+[class*="-copyrights-pane"] {
+  display: none;
+}
+
+
+[class*="-balloon_layout_normal"] {
+  left: calc(-1 * 343px / 2) !important;
+  top: unset !important;
+  bottom: 27px;
+  width: 343px;
+  box-shadow: 0 10px 0 0 rgb(0 0 0 / 25%) !important}
+[class*="-balloon_layout"] {
+  border-radius: 10px;
+}
+
+[class*="-balloon"] [class*="-balloon__content"] {
+  padding: 30px 0 30px 30px !important;
+  width: calc(343px - 60px) !important;
+}
+
+[class*="-balloon"] [class*="-balloon__content"] ymaps {
+  width: 100% !important;
+}
+
+[class*="-balloon"] [class*="-balloon__tail"] {
+  left: calc(50% - 10px) !important;
+}
+
+[class*="-balloon"] [class*="-balloon__close"] {
+  top: 20px;
+  right: 20px;
+  background-size: contain !important;
+  transition: opacity ease-in-out 0.3s;
+}
+
+[class*="-balloon"] [class*="-balloon__close"]:focus [class*="-balloon__close-button"] {
+  top: 20px;
+  right: 20px;
+}
+
+[class*="-balloon"] [class*="-balloon__close"]:active {
+  top: 20px;
+  right: 20px;
+}
+
+[class*="-balloon"] [class*="-balloon__close-button"] {
+  width: 12px;
+  height: 12px;
+  color: $grey;
+}
+[class*="-balloon"] [class*="-balloon__close-button"]:hover  {
+  color: $primary;
+}
+
+
+.balloon {
+  width: 343px;
+  height: 384px;
+  background-color: $bone;
+  padding: 30px;
+}
+.balloon__header {
+  margin-bottom: 13px;
+}
+
+.balloon__heading{
+  margin-bottom: 7px;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 100%;
+  color: $black;
+}
+.balloon__address {
+  font-weight: 400;
+  margin-bottom: 8px;
+  font-size: 14px;
+  line-height: 180%;
+}
+
+.balloon__content {
+  margin-bottom: 9px;
+  padding: 12px 0;
+  border-top: 1px solid $grey-light;
+  border-bottom: 1px solid $grey-light;
+}
+.balloon__name{
+  font-size: 14px;
+  line-height: 180%;
+  color: $grey;
+}
+.balloon__value {
+  font-size: 14px;
+  line-height: 180%;
+  color: $black;
+}
+
+
+// 0.0.0.0 apps.corel.com
+// 0.0.0.0 mc.corel.com
+// 0.0.0.0 origin-mc.corel.com
+// 0.0.0.0 iws.corel.com
+// 127.0.0.1 view-localhost # view localhost server
+

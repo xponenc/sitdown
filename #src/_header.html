@@ -1,0 +1,85 @@
+<header class="header">
+  <div class="header__nav nav">
+    <div class="nav__top top-nav">
+      <div class="header__wrapper container">
+        <div class="region">
+          <label class="region__label" for="region">Ваш регион:</label>
+          <select name="region" id="region" class="region__select">
+            <option value="">Москва</option>
+            <option value="">Казань</option>
+            <option value="">Уфа</option>
+            <option value="">Пермь</option>
+          </select>
+          <svg class="region__select-arrow">
+            <use xlink:href="img/sprite.svg#arrow-down"></use>
+          </svg>
+        </div>
+        <a class="call call_accent top-nav__call" href="tel:+74958854547">
+          <svg>
+            <use xlink:href="img/sprite.svg#call"></use>
+          </svg>
+          <span>+7 &#40;495&#41; 885-45-47</span>
+        </a>
+        <ul class="top-nav__menu submenu">
+          <li class="submenu__item"><a href="#" class="submenu__link"><span>О компании</span></a></li>
+          <li class="submenu__item"><a href="#" class="submenu__link"><span>Гарантия и возврат</span></a></li>
+          <li class="submenu__item"><a href="#" class="submenu__link"><span>Корпоративным клиентам</span></a></li>
+          <li class="submenu__item"><a href="#" class="submenu__link"><span>Дизайн-решение</span></a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="header__container container">
+      <div class="nav__main">
+        <img src="img/logo.svg" alt="Логотип SitDownPls" class="header__logo" />
+        <ul class="header__menu menu">
+          <li class="menu__item"><a href="catalog.html" class="menu__link"><span>Каталог</span></a></li>
+          <li class="menu__item"><a href="contact.html" class="menu__link"><span>Магазины</span></a></li>
+          <li class="menu__item"><a href="contact.html" class="menu__link"><span>Шоу-рум</span></a></li>
+          <li class="menu__item"><a href="#" class="menu__link"><span>Доставка и оплата</span></a></li>
+          <li class="menu__item"><a href="#" class="menu__link"><span>Дисконт</span></a></li>
+          <li class="menu__item"><a href="contact.html" class="menu__link"><span>Контакты</span></a></li>
+        </ul>
+      </div>
+      <div class="nav__bottom">
+        <form class="header__search search" action="http://jsonplaceholder.typicode.com/posts" method="post">
+          <button class="search__button btn-round" aria-label="Поиск по сайту">
+            <svg>
+              <use xlink:href="img/sprite.svg#arrow-right"></use>
+            </svg>
+          </button>
+          <input required id="search" class="search__input" aria-label="Введите текст для поиска по сайту"
+          aria-required="true" type="search" placeholder="Я хочу купить..." name="search-string">
+          <svg class="search__icon">
+            <use xlink:href="img/sprite.svg#search"></use>
+          </svg>
+        </form>
+        <select name="category" id="category" class="category">
+          <option value="">Категория</option>
+          <option value="">Диваны</option>
+          <option value="">Комоды</option>
+          <option value="">Кресла</option>
+          <option value="">Стулья</option>
+          <option value="">Пуфы</option>
+          <option value="">Столы</option>
+          <option value="">Кровати</option>
+          <option value="">Аксессуары</option>
+          <option value="">Тумбы</option>
+        </select>
+        <a class="account" href="#">
+          <svg>
+            <use xlink:href="img/sprite.svg#user"></use>
+          </svg>
+        </a>
+        <a class="cart" href="#">
+          <span class="cart__counter">0</span>
+          <svg>
+            <use xlink:href="img/sprite.svg#cart"></use>
+          </svg>
+        </a>
+      </div> 
+    </div>
+  </div>
+    <!-- <button type="button" class="header__burger">
+      <span></span>
+    </button> -->
+</header>

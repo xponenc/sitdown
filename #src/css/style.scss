@@ -1,0 +1,58 @@
+@import "css_components/_normalize.scss";
+@import "css_components/_var.scss";
+@mixin font($font-name, $file-name, $weight, $style) {
+  @font-face {
+    font-family: $font-name;
+    font-display: swap;
+    src: local("#{$file-name}"), url("../fonts/#{$file-name}.woff") format("woff"),
+      url("../fonts/#{$file-name}.woff2") format("woff2");
+    font-weight: #{$weight};
+    font-style: #{$style};
+  }
+}
+
+@import "_fonts.scss";
+// @import "css_components/_justValidateTooltip.scss";
+
+@import "../libs/choise_js/choices.min.css";
+@import "../libs/swiper-bundle.min.css";
+// @import "../libs/nouislider/nouislider.min.css";
+
+
+
+@import "css_components/_global.scss";
+@import "css_components/_overall.scss";
+@import "css_components/_mixins.scss";
+@import "css_components/_modal-form.scss";
+
+.site-container {
+  position: relative;
+  min-height: 100vh;
+  // display: grid;
+  // grid-template-columns: 1fr;
+  // grid-template-rows:auto 1fr auto;
+}
+@import "page";
+@import "header";
+@import "bread";
+@import "side-nav";
+@import "footer";
+
+@import "index-hero";
+@import "index-special";
+@import "index-top";
+@import "index-main-banner";
+@import "index-top-category";
+@import "index-useful";
+@import "index-contact";
+@import "catalog-catalog";
+@import "product";
+@import "similar";
+
+
+
+// Сотрудничество
+@import "cooperation";
+
+//Контакты
+@import "contacts";

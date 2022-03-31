@@ -1,0 +1,36 @@
+<section class="contact-us">
+  <div class="contact-us__container container lazy" data-bg="../img/contact-us_bgnd.png">
+    <div class="contact-us__wrapper">
+      <h3 class="contact-us__heading heading">Мы всегда вам рады!</h3>
+      <p class="contact-us__info">Безусловно, новая модель организационной деятельности в значительной степени обусловливает важность распределения внутренних резервов и ресурсов.<span class="contact-us__tooltip tooltip">
+          <svg class="tooltip__icon"><use xlink:href="img/sprite.svg#question"></use></svg>
+        <span class="tooltip__text">Реплицированные с зарубежных источников, исследования формируют глобальную сеть.</span></span>
+      </p>
+      <form action="http://jsonplaceholder.typicode.com/posts" method="POST" class="contact-us__form contact-form">
+        <div class="contact-form__input-box just-validate-tooltip-container">
+          <input required id="name" type="text" name="name" class="contact-form__input" placeholder="Как вас зовут?"
+            data-validate-field="name" aria-label="Введите имя" aria-required="true">
+        </div>
+        <div class="contact-form__input-box just-validate-tooltip-container">
+          <input required id="phone" type="tel" name="phone" class="contact-form__input" placeholder="Ваш телефон"
+            data-validate-field="phone" aria-label="Введите ваш номер" aria-required="true">
+        </div>
+        <div class="contact-form__input-box just-validate-tooltip-container">
+          <input required id="email-c" type="email" name="email" class="contact-form__input" placeholder="Ваш e-mail"
+            data-validate-field="email" aria-label="Введите адрес электронной почты" aria-required="true">
+        </div>
+        <div class="contact-form__checkbox checkbox">
+          <div class="just-validate-tooltip-container">
+            <label class="checkbox__lable">
+              <input required type="checkbox" id="agree" data-validate-field="agree" class="checkbox__input"
+                aria-label="Согласие на принятие пользовтельского соглашения" aria-required="true">
+              <span class="checkbox__text"><span>Принимаю </span><a href="#" class="checkbox__link"> пользовательское соглашение</a></span>
+            </label>
+          </div>
+          <button type="submit" class="contact-form__btn btn btn_primary"
+            aria-label="Отправить сообщение">Отправить</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>

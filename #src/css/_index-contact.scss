@@ -1,0 +1,194 @@
+.contact-us {
+    margin-bottom: 70px;
+    // .contact-us__container
+    &__container {
+        background-repeat: no-repeat;
+        background-position: 98% center ;
+        background-size: calc($container-max-width / 2 - $gap / 2) auto;
+        // background-image: url("../img/contact-us_bgnd.png");
+    }
+    // .contact-us__wrapper
+    &__wrapper {
+        width: calc($container-max-width / 2 - $gap / 2);
+    }
+    // .contact-us__subheading
+    &__heading {
+        margin-bottom: 10px;
+    }
+    // .contact-us__info
+    &__info {
+        margin-bottom: 15px;
+        font-size: 14px;
+        line-height: 19px;
+        color: $grey_shade;
+    }
+    // .contact-us__form
+    &__form {
+    }
+}
+.container {
+}
+.subheading {
+}
+
+.contact-form {
+    width: 100%;
+    // .contact-form__input-box
+    &__input-box {
+      margin-bottom: 30px;
+    }
+    // .contact-form__input
+    &__input {
+        padding: 6px 17px;
+        font-size: 16px;
+        line-height: 40px;
+        width: 100%;
+        // height: 50px;
+        border-radius: 10px;
+        border: 1px solid transparent;
+        background-color: $grey_light;
+        color: $black;
+        transition-property: color, border-color, background-color;
+        transition-timing-function: ease-in-out;
+        transition-duration: 0.3s;
+        &:focus {
+            border-color: $primary;
+            background-color: $pink_light;
+        }
+        &:hover {
+            background-color: $md_grey;
+        }
+        &:not(:placeholder-shown) {
+            border-color: transparent;
+            background-color: $grey_light;
+        }
+        &.is-invalid {
+        border-color: $red_input !important;
+        }
+        &::placeholder {
+            color: $grey;
+        }
+    }
+    // .contact-form__checkbox
+    &__checkbox {
+        display: flex;
+        flex-direction: column-reverse;
+        justify-content: flex-end;
+        align-items: flex-start;
+    }
+    &__btn {
+        margin-bottom: 13px;
+        padding: 17px 31px;
+    }
+}
+
+.checkbox {
+    // .checkbox__lable
+    &__lable {
+        position: relative;
+        display: block;
+        cursor: pointer;
+    }
+    // .checkbox__input
+    &__input {
+        position: absolute;
+        opacity: 0;
+        &:checked + .checkbox__text::before {
+        background-image: url("../img/checked.png");
+        background-color: $primary;
+        border-color: $primary;
+        }
+        &:focus {
+            & + .checkbox__text::after {
+                opacity: 1;
+            }
+        }
+        &:hover {
+            & + .checkbox__text {
+                color: $primary_light;
+            }
+            & + .checkbox__text span{
+                color: $primary_light;
+            }
+        }
+        &.is-invalid + .checkbox__text::after {
+            outline: 1px solid $red_input;
+            opacity: 1;
+        }
+    }
+    // .checkbox__text
+    &__text {
+        display: flex;
+        align-items: center;
+        color: $primary;
+
+        font-size: 14px;
+        line-height: 19px;
+        &::before {
+        content: "";
+        margin-right: 8px;
+        min-width: 14px;
+        min-height: 14px;
+        border: 1px solid $grey;
+        border-radius: 2px;
+        background-position: center;
+        background-repeat: no-repeat;
+        transition-property: background-image, border-color;
+        transition-timing-function: ease-in-out;
+        transition-duration: 0.3s;
+        }
+        &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: -2px;
+        right: -2px;
+        opacity: 0;
+        outline: 1px solid $primary;
+        transition: opacity 0.3s ease-in-out;
+        }
+        & span {
+            display: inline-block;
+            padding-right: 3px;
+            color: $black;
+            transition: color ease-in-out 0.3s;
+        }
+    }
+    &__link {
+        @include hover;
+        
+        display: inline-block;
+        position: relative;
+        z-index: 5;
+        border-bottom: 1px solid $primary;
+        line-height: 1;
+        transition-property: color, background-color;
+        transition-timing-function: ease-in-out;
+        transition-duration: 0.3s;
+        // &::before {
+        //     content: "";
+        //     position: absolute;
+        //     bottom: 0;
+        //     left: 0;
+        //     right: 0;
+        //     height: 1px;    
+        //     background-color: $primary;
+        // }
+        & :focus {
+            background-color: $primary_light;
+            color: $white;
+        }
+        &:hover {
+            background-color: transparent;
+            color: $primary_shade;
+        }
+        &:active {
+            background-color: $primary_shade;
+            color: $white;
+        }
+    }
+}
+    .js-focus-visible .checkbox__input:focus:not(.focus-visible) + .checkbox__text::after {
+    opacity: 0;
+}

@@ -1,0 +1,104 @@
+.contacts {
+    padding-top: 30px;
+    margin-bottom: 70px;
+    // .contacts__container
+    &__container {
+        position: relative;
+    }
+    // .contacts__heading
+    &__heading {
+        margin-bottom: 17px;
+    }
+    // .contacts__search
+    &__search {
+        display: flex;
+        align-items: center;
+        margin-bottom: $gap;
+    }
+    // .contacts__input
+    &__input {
+        margin-right: $gap;
+        padding: 16px 17px;
+        background: $grey_light;
+        border: 2px solid $grey_light;
+        border-radius: 10px;
+        width: calc((100% - $gap) / 2);
+        min-height: 54px;
+        font-size: 16px;
+        line-height: 120%;
+        color: $black;
+        transition-property: background-color, color, border-color;
+        transition-timing-function: ease-in-out;
+        transition-duration: 0.3s;
+        &::placeholder {
+            color: $grey;
+        }
+        &:hover {
+            background-color: $md_grey;
+        }
+        &:focus.focus-visible {
+            border-color: $primary;
+            background-color: $pink_light;
+        }
+        &:active {
+            border-color: $grey_light;
+            background-color: $grey_light;
+            &~.search__icon{
+                color: $primary;
+            }
+        }
+    }
+    // .contacts__btn
+    &__btn {
+        padding: 17px 33px; 
+    }
+    &__map {
+        border-radius: 10px;
+        overflow: hidden;
+    }
+    
+    &__map {
+        height: 510px;
+    }
+}
+.container {
+}
+.heading {
+}
+.btn {
+    // .btn_primary
+    &_primary {
+    }
+}
+
+
+.yandex {
+}
+
+
+
+
+.search-shop .choices {
+    margin-right: $gap;
+    padding: 15px 57px;
+    background: $grey_light;
+    border: 2px solid $grey_light;
+    border-radius: 10px;
+    width: 50%;
+    min-height: 60px;
+    font-size: 16px;
+}
+
+
+.shop-choices__heading {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 22px;
+    color: $black;
+}
+.shop-choices__address {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 180%;
+    color: $grey;
+}

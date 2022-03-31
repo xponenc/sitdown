@@ -1,0 +1,32 @@
+.breadcrumbs {
+    font-size: 14px;
+    line-height: 100%;
+    color: $grey;
+    &__list{
+        display: flex;
+    }
+    &__item:not(:last-child)::after {
+        content: "/";
+        padding: 0 3px 0 6px;
+    }
+    &__link{
+        transition-property: color, background-color;
+        transition-timing-function: ease-in-out;
+        transition-duration: 0.3s;
+        &:focus {
+            background-color: $pink_light;
+            color: $primary_light;
+        }
+        &:hover{
+            color: $primary;
+            background-color: transparent;
+        }
+        &:active{
+            color: $primary_shade;
+            background-color: transparent;
+        }
+        &_current {
+            color: $primary_shade;
+        }
+    }
+}
