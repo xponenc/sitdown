@@ -1,6 +1,12 @@
 .similar {
     padding-top: 14px;
     margin-bottom: 67px;
+    @media (max-width: 768px) {
+        margin-bottom: 69px;
+    }
+    @media (max-width: 510px) {
+        margin-bottom: 72px;
+    }
     // .similar__container
     &__container {
     }
@@ -9,10 +15,16 @@
         margin-bottom: 26px;
         font-size: 24px;
         line-height: 130%;
+        @media (max-width: 768px) {
+            margin-bottom: 24px;
+        }
     }
     // .similar__slider
     &__slider {
         position: relative;
+        @media (max-width: 510px) {
+            padding-bottom: 48px;
+        }
     }
 }
 .container {
@@ -28,6 +40,11 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
+        @media (max-width: 510px) {
+            top: calc(100% + 16px);
+            right: 50%;
+            transform: translateX(50%);
+        }
     }
     // .slider-similar__body
     &__body {

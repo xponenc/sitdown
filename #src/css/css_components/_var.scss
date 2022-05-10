@@ -22,3 +22,7 @@ $grey_shade: #666666;
 $black: #333333;
 $lime_color: #DAFFD1;
 $bone: #FFF5D1;
+
+@media (max-width: 510px) {
+    $gap: 16px;
+}

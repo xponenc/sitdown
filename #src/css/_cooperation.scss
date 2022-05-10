@@ -1,6 +1,9 @@
 .cooperation {
     padding-top: 31px;
     margin-bottom: 70px;
+    @media (max-width: 510px) {
+        padding-top: 8px;
+    }
     // .cooperation__container
     &__container {
         position: relative;
@@ -10,18 +13,25 @@
     &__heading {
         margin-bottom: 33px;
     }
-   
-
     // .cooperation__wrapper
     &__wrapper {
         display: grid;
         grid-template-columns: repeat(12, 1fr);
         gap: $gap;
         width: 100%;
+        @media (max-width: 1024px) {
+            grid-template-columns: repeat(9, 1fr);
+        }
+        @media (max-width: 768px) {
+            grid-template-columns: 1fr;
+        }
     }
     // .cooperation__item
     &__item {
         grid-column: span 8;
+        @media (max-width: 768px) {
+            grid-column: span 1;
+        }
         &_getting {
             grid-column: span 6;
         }
@@ -33,13 +43,20 @@
         margin-bottom: 12px;
         font-size: 24px;
         line-height: 33px;
+        @media (max-width: 510px) {
+            font-size: 16px;
+            line-height: 22px;
+        }
     }
     &__text {
         font-size: 16px;
         line-height: 180%;
         color: $grey_shade;
+        @media (max-width: 510px) {
+            font-size: 14px;
+            line-height: 178%;
+        }
     }
-
 }
 
 .item-cooperation {
@@ -69,10 +86,20 @@
     }
     &__text {
         line-height: 150%;
+        @media (max-width: 510px) {
+            line-height: 150%;
+        }
     }
 }
 .advantage {
     &__heading {
+        @media (max-width: 510px) {
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 19px;
+        }
+    }
+    &__subheading {
         margin-bottom: 14px;
         font-weight: 600;
         font-size: 16px;
@@ -96,18 +123,31 @@
 }
 
 .info {
-    // .info__text
-    &__text {
-        grid-column: span 6;
-        padding-left: calc(77px + 33px);
-        padding-top: 22px;
-        padding-bottom: 22px;
-        font-size: 24px;
-        line-height: 150%;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: $gap;
+    @media (max-width: 510px) {
+        gap: calc($gap / 2);
+    }
+    &__img{
         background-repeat: no-repeat;
         background-position: left center;
         background-size: contain;
         background-image: url("../img/cooperation/pencil.png");
+    }
+    // .info__text
+    &__text {
+        grid-column: span 5;
+        padding-top: 22px;
+        padding-bottom: 22px;
+        font-size: 24px;
+        line-height: 150%;
+        @media (max-width: 510px) {
+            grid-column: span 4;
+            font-size: 16px;
+            padding-top: 0;
+            padding-bottom: 0;
+        }
     }
 }
 

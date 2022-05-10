@@ -1,7 +1,10 @@
 <header class="header">
   <div class="header__nav nav">
-    <div class="nav__top top-nav">
-      <div class="header__wrapper container">
+    <div class="header__top container">
+      <div class="header__logo-block">
+        <img src="img/logo.svg" alt="Логотип SitDownPls" class="header__logo header__logo_mobile" />
+      </div>
+      <div class="header__region">
         <div class="region">
           <label class="region__label" for="region">Ваш регион:</label>
           <select name="region" id="region" class="region__select">
@@ -14,72 +17,125 @@
             <use xlink:href="img/sprite.svg#arrow-down"></use>
           </svg>
         </div>
-        <a class="call call_accent top-nav__call" href="tel:+74958854547">
+        <a class="header__call call call_accent" href="tel:+74958854547" aria-label="Телефон">
           <svg>
             <use xlink:href="img/sprite.svg#call"></use>
           </svg>
           <span>+7 &#40;495&#41; 885-45-47</span>
         </a>
-        <ul class="top-nav__menu submenu">
+      </div>
+      <div class="header__submenu-wrapper">
+        <ul class="header__submenu submenu">
           <li class="submenu__item"><a href="#" class="submenu__link"><span>О компании</span></a></li>
           <li class="submenu__item"><a href="#" class="submenu__link"><span>Гарантия и возврат</span></a></li>
           <li class="submenu__item"><a href="#" class="submenu__link"><span>Корпоративным клиентам</span></a></li>
           <li class="submenu__item"><a href="#" class="submenu__link"><span>Дизайн-решение</span></a></li>
         </ul>
+        <div class="header__user header__user_submenu user">
+          <a class="account" href="#" aria-label="Личный кабинет">
+            <svg>
+              <use xlink:href="img/sprite.svg#user"></use>
+            </svg>
+          </a>
+          <a class="cart" href="#" aria-label="Корзина покупок">
+            <span class="cart__counter">0</span>
+            <svg>
+              <use xlink:href="img/sprite.svg#cart"></use>
+            </svg>
+          </a>
+        </div>
       </div>
     </div>
-    <div class="header__container container">
-      <div class="nav__main">
-        <img src="img/logo.svg" alt="Логотип SitDownPls" class="header__logo" />
-        <ul class="header__menu menu">
-          <li class="menu__item"><a href="catalog.html" class="menu__link"><span>Каталог</span></a></li>
-          <li class="menu__item"><a href="contact.html" class="menu__link"><span>Магазины</span></a></li>
-          <li class="menu__item"><a href="contact.html" class="menu__link"><span>Шоу-рум</span></a></li>
-          <li class="menu__item"><a href="#" class="menu__link"><span>Доставка и оплата</span></a></li>
-          <li class="menu__item"><a href="#" class="menu__link"><span>Дисконт</span></a></li>
-          <li class="menu__item"><a href="contact.html" class="menu__link"><span>Контакты</span></a></li>
-        </ul>
+    <div class="header__wrapper">
+      <div class="burger-menu">
+        <div class="burger-menu__content">
+          <div class="burger-menu__container container">
+            <ul class="burger-menu__menu menu"></ul>
+          </div>
+          <div class="burger-menu__wrapper">
+            <div class="burger-menu__container container">
+              <ul class="burger-menu__submenu submenu"></ul>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="nav__bottom">
-        <form class="header__search search" action="http://jsonplaceholder.typicode.com/posts" method="post">
-          <button class="search__button btn-round" aria-label="Поиск по сайту">
-            <svg>
-              <use xlink:href="img/sprite.svg#arrow-right"></use>
-            </svg>
+      <div class="header__container container">
+        <div class="nav__main">
+          <button type="button" class="header__burger burger" aria-label="Открыть меню">
+            <span></span>
+            <span></span>
+            <span></span>
           </button>
-          <input required id="search" class="search__input" aria-label="Введите текст для поиска по сайту"
-          aria-required="true" type="search" placeholder="Я хочу купить..." name="search-string">
-          <svg class="search__icon">
-            <use xlink:href="img/sprite.svg#search"></use>
-          </svg>
-        </form>
-        <select name="category" id="category" class="category">
-          <option value="">Категория</option>
-          <option value="">Диваны</option>
-          <option value="">Комоды</option>
-          <option value="">Кресла</option>
-          <option value="">Стулья</option>
-          <option value="">Пуфы</option>
-          <option value="">Столы</option>
-          <option value="">Кровати</option>
-          <option value="">Аксессуары</option>
-          <option value="">Тумбы</option>
-        </select>
-        <a class="account" href="#">
-          <svg>
-            <use xlink:href="img/sprite.svg#user"></use>
-          </svg>
-        </a>
-        <a class="cart" href="#">
-          <span class="cart__counter">0</span>
-          <svg>
-            <use xlink:href="img/sprite.svg#cart"></use>
-          </svg>
-        </a>
-      </div> 
+          <img src="img/logo.svg" alt="Логотип SitDownPls" class="header__logo header__logo_main" />
+          <ul class="header__menu menu">
+            <li class="menu__item"><a href="catalog.html" class="menu__link"><span>Каталог</span></a></li>
+            <li class="menu__item"><a href="contact.html" class="menu__link"><span>Магазины</span></a></li>
+            <li class="menu__item"><a href="contact.html" class="menu__link"><span>Шоу-рум</span></a></li>
+            <li class="menu__item"><a href="#" class="menu__link"><span>Доставка и оплата</span></a></li>
+            <li class="menu__item"><a href="#" class="menu__link"><span>Дисконт</span></a></li>
+            <li class="menu__item"><a href="contact.html" class="menu__link"><span>Контакты</span></a></li>
+          </ul>
+          <div class="header__user header__user_main user">
+            <a class="account" href="#" aria-label="Личный кабинет">
+              <svg>
+                <use xlink:href="img/sprite.svg#user"></use>
+              </svg>
+            </a>
+            <a class="cart" href="#" aria-label="Корзина покупок">
+              <span class="cart__counter">0</span>
+              <svg>
+                <use xlink:href="img/sprite.svg#cart"></use>
+              </svg>
+            </a>
+          
+          </div>
+        </div>
+        <div class="header__bottom">
+          <form class="header__search search" action="http://jsonplaceholder.typicode.com/posts" method="post">
+            <button class="search__button btn-round" aria-label="Поиск по сайту">
+              <svg>
+                <use xlink:href="img/sprite.svg#arrow-right"></use>
+              </svg>
+            </button>
+            <input required id="search" class="search__input" aria-label="Введите текст для поиска по сайту"
+            aria-required="true" type="search" placeholder="Я хочу купить..." name="search-string">
+            <svg class="search__icon">
+              <use xlink:href="img/sprite.svg#search"></use>
+            </svg>
+          </form>
+          <div class="header__category">
+            <select class="category" name="category" id="category">
+              <option value="">Категория</option>
+              <option value="">Диваны</option>
+              <option value="">Комоды</option>
+              <option value="">Кресла</option>
+              <option value="">Стулья</option>
+              <option value="">Пуфы</option>
+              <option value="">Столы</option>
+              <option value="">Кровати</option>
+              <option value="">Аксессуары</option>
+              <option value="">Тумбы</option>
+            </select>
+          </div>
+          <div class="header__user header__user_bottom user">
+            <a class="account" href="#" aria-label="Личный кабинет">
+              <svg>
+                <use xlink:href="img/sprite.svg#user"></use>
+              </svg>
+            </a>
+            <a class="cart" href="#" aria-label="Корзина покупок">
+              <span class="cart__counter">0</span>
+              <svg>
+                <use xlink:href="img/sprite.svg#cart"></use>
+              </svg>
+            </a>
+          </div>
+        </div>
+        <div class="cart-container" id="cart">
+          <ul class="cart-container__list cart-list">
+          </ul>  
+        </div>
+      </div>
     </div>
   </div>
-    <!-- <button type="button" class="header__burger">
-      <span></span>
-    </button> -->
 </header>

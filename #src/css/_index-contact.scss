@@ -1,19 +1,53 @@
 .contact-us {
     margin-bottom: 70px;
+    @media (max-width: 510px) {
+        margin-bottom: 66px;
+    }
     // .contact-us__container
     &__container {
-        background-repeat: no-repeat;
-        background-position: 98% center ;
-        background-size: calc($container-max-width / 2 - $gap / 2) auto;
-        // background-image: url("../img/contact-us_bgnd.png");
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: $gap;
+        @media (max-width: 1024px) {
+            grid-template-columns: repeat(9, 1fr);
+        }
+        @media (max-width: 768px) {
+            grid-template-columns: repeat(3, 1fr);
+        }
     }
     // .contact-us__wrapper
     &__wrapper {
-        width: calc($container-max-width / 2 - $gap / 2);
+        @media (max-width: 1024px) {
+            grid-column: span 4;
+        }
+        @media (max-width: 768px) {
+            grid-column: span 2;
+        }
+        @media (max-width: 510px) {
+            grid-column: span 3;
+        }
+    }
+    &__bgnd {
+        width: 100%;
+        height: 100%;
+        background-repeat: no-repeat;
+        background-position: 98% center ;
+        background-size: contain;
+        background-image: url("../img/contact-us_bgnd.png");
+        @media (max-width: 1024px) {
+            grid-column: span 5;
+        }
+        @media (max-width: 768px) {
+            grid-column: span 1;
+            background-image: url("../img/contact-us_bgnd-768.png");
+        }
+        @media (max-width: 510px) {
+            display: none;
+        }
     }
     // .contact-us__subheading
     &__heading {
-        margin-bottom: 10px;
+        margin-bottom: 9px;
     }
     // .contact-us__info
     &__info {
@@ -124,6 +158,9 @@
 
         font-size: 14px;
         line-height: 19px;
+        @media (max-width: 510px) {
+            font-size: 12px;
+        }
         &::before {
         content: "";
         margin-right: 8px;
@@ -161,8 +198,9 @@
         display: inline-block;
         position: relative;
         z-index: 5;
-        border-bottom: 1px solid $primary;
-        line-height: 1;
+        // border-bottom: 1px solid $primary;
+        text-decoration: underline;
+        line-height: 1.2;
         transition-property: color, background-color;
         transition-timing-function: ease-in-out;
         transition-duration: 0.3s;

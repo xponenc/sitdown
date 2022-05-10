@@ -2,6 +2,10 @@
     font-size: 14px;
     line-height: 100%;
     color: $grey;
+    @media (max-width: 510px) {
+        display: none;
+        visibility: hidden;
+    }
     &__list{
         display: flex;
     }

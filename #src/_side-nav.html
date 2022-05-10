@@ -1,9 +1,15 @@
 <aside class="page__side">
     <div class="filter">
-        <h3 class="filter__heading">Фильтровать по:</h3>
+        <h3 class="filter__heading filter__heading_main">Фильтровать по:</h3>
+        <h3 class="filter__heading filter__heading_tablet">Фильтры:</h3>
         <div class="filter__body">
-            <div class="filter__section section-filter">
-                <h4 class="section-filter__heaging">Категория</h4>
+            <div class="filter__section section-filter section-filter_category">
+                <h4 class="section-filter__heading">
+                    <span>Категория</span>
+                    <svg class="section-filter__arrow">
+                        <use xlink:href="img/sprite.svg#arrow-down"></use>
+                    </svg>
+                </h4>
                 <div class="section-filter__body">
                     <label class="section-filter__checkbox checkbox-filter" aria-label="Категория Диваны">
                         <input type="checkbox" class="checkbox-filter__input visually-hidden" checked>
@@ -50,16 +56,33 @@
                         <span class="checkbox-filter__box"></span>
                         <span class="checkbox-filter__text">Аксессуары</span>
                     </label>
+                    <label class="section-filter__checkbox checkbox-filter" aria-label="Категория Столы">
+                        <input type="checkbox" class="checkbox-filter__input visually-hidden">
+                        <span class="checkbox-filter__box"></span>
+                        <span class="checkbox-filter__text">Столы</span>
+                    </label>
+                    <label class="section-filter__checkbox checkbox-filter" aria-label="Категория Аксессуары">
+                        <input type="checkbox" class="checkbox-filter__input visually-hidden">
+                        <span class="checkbox-filter__box"></span>
+                        <span class="checkbox-filter__text">Аксессуары</span>
+                    </label>
+                    <button class="filter__btn filter__btn_show filter__btn_hidden" aria-label="Показать дополнительные фильтры"></button>
+                    <button class="filter__btn filter__btn_hide filter__btn_hidden" aria-label="Свернуть фильтры">Свернуть</button>
                 </div>
             </div>
             <div class="filter__section section-filter section-filter_price">
-                <h4 class="section-filter__heaging">Цена</h4>
-                <div class="filter-price">
+                <h4 class="section-filter__heading section-filter__heading_price">
+                    <span>Цена</span>
+                    <svg class="section-filter__arrow">
+                        <use xlink:href="img/sprite.svg#arrow-down"></use>
+                    </svg>
+                </h4>
+                <div class="section-filter__body filter-price">
                     <div class="filter-price__sets">
-                        <label><span>от</span>
+                        <label class="filter-price__label"><span class="filter-price__text">от</span>
                             <input class="filter-price__set filter-price__set_lower" type="text" id="input-with-keypress-1">
                         </label> 
-                        <label><span>до</span>
+                        <label class="filter-price__label"><span class="filter-price__text">до</span>
                             <input class="filter-price__set filter-price__set_higher" type="text" id="input-with-keypress-2">
                         </label>
                     </div>
@@ -68,8 +91,13 @@
                     </div>
                 </div>
             </div>
-            <div class="filter__section section-filter">
-                <h4 class="section-filter__heaging">Скидка</h4>
+            <div class="filter__section section-filter section-filter_discount">
+                <h4 class="section-filter__heading">
+                    <span>Скидка</span>
+                    <svg class="section-filter__arrow">
+                        <use xlink:href="img/sprite.svg#arrow-down"></use>
+                    </svg>
+                </h4>
                 <div class="section-filter__body">
                     <label class="section-filter__checkbox checkbox-filter" aria-label="Скидка Более 5 000">
                         <input type="checkbox" class="checkbox-filter__input visually-hidden" name="discount_more5000">
@@ -88,8 +116,13 @@
                     </label>
                 </div>
             </div>
-            <div class="filter__section section-filter">
-                <h4 class="section-filter__heaging">Цвет</h4>
+            <div class="filter__section section-filter section-filter_color">
+                <h4 class="section-filter__heading">
+                    <span>Цвет</span>
+                    <svg class="section-filter__arrow">
+                        <use xlink:href="img/sprite.svg#arrow-down"></use>
+                    </svg>
+                </h4>
                 <div class="section-filter__body">
                     <label class="section-filter__checkbox checkbox-filter" aria-label="Цвее Коричневый">
                         <input type="checkbox" class="checkbox-filter__input visually-hidden" name="color_brown">
