@@ -355,8 +355,7 @@ window.onload = function () {
                     slidesPerGroup: 3,
                     spaceBetween: 32,
                 },
-                1024: {
-                }
+             
             },
             pagination: {
                 el: ".controls-slider-catalog__bullets",
