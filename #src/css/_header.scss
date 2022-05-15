@@ -595,15 +595,16 @@
     justify-content: flex-end;
     position: relative;
     padding: 4px;
-    width: 49px;
+    width: 37px;
     height: 34px;
     color: $primary;
+    transform: translateX(4px);
     &__counter {
         @include flex-all-center;
 
         position: absolute;
-        top: 5px;
-        left: 0;
+        top: 8px;
+        left: -8px;
         min-width: 15px;
         padding: 0 2px;
         aspect-ratio: 1 / 1;

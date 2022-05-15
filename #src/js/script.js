@@ -133,7 +133,7 @@ window.onload = function () {
 
     // MAIN:HERO Инициализация свайпера 
     if (document.querySelector(".slider-hero__body")) {
-        new Swiper(".slider-hero__body", {
+        let heroSlider = new Swiper(".slider-hero__body", {
             slidesPerView: 1,
             speed: 1500,
             loop: true,
@@ -142,14 +142,23 @@ window.onload = function () {
             fadeEffect: {
                 crossFade: true
             },
-            autoplay: {
-                delay: 30000,
-            },
+            // autoplay: {
+            //     delay: 3000,
+            // },
             pagination: {
                 el: ".controls-slider-hero__bullets",
                 clickable: true,
             },
         })
+
+        let heroBulletsBlock = document.querySelector(".controls-slider-hero__bullets");
+        let heroBullets =  heroBulletsBlock.querySelectorAll(".swiper-pagination-bullet");
+        heroBullets.forEach((el) => {
+            el.addEventListener('animationend', () => {
+                console.log('Animation ended');
+                heroSlider.slideNext(1500);
+            });
+        });
     }
 
     // MAIN: SPECIAL Инициализация свайпера
@@ -342,6 +351,7 @@ window.onload = function () {
             // simulateTouch: false,
             // observer: true,
             // observeParents: true,
+            watchSlidesProgress: true,
             slidesPerView: 2,
             slidesPerGroup: 2,
             grid: {
@@ -355,7 +365,6 @@ window.onload = function () {
                     slidesPerGroup: 3,
                     spaceBetween: 32,
                 },
-             
             },
             pagination: {
                 el: ".controls-slider-catalog__bullets",
